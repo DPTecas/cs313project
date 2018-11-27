@@ -16,4 +16,6 @@ function testCallback(req, res){
 
 	console.log("Trying to connect to a db at: " + dbConnectionString);
 
+	res.json({name: "will"});
+
 }
