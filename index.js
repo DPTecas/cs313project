@@ -48,7 +48,7 @@ function getData(req, res) {
 function getTitleFromDb(id, callback) {
 	console.log("Getting person from DB with id: " + id);
 
-	var sql = "SELECT id, title FROM person WHERE id = $1::int";
+	var sql = "SELECT id, title FROM titles WHERE id = $1::int";
 
 	var params = [id];
 
