@@ -12,7 +12,7 @@ app.listen(port, function(req, res){
 });
 
 function testCallback(req, res){
-	console.log("Getting person...");
+	console.log("Getting website...");
 
 	console.log("Trying to connect to a db at: " + dbConnectionString);
 
