@@ -34,13 +34,15 @@ function getData(req, res) {
 	var id = req.query.id;
 
 	getTitleFromDb(id, function(error, result){
+
 		if (error || result == null || result.length != 1) {
 			response.status(500).json({success: false, data: error});
-		} else {
+		} 
+		else {
 			var person = result[0];
 			response.status(200).json(result[0]);
 		}
-	})
+	});
 }
 
 function getTitleFromDb(id, callback) {
