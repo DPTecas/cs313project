@@ -45,18 +45,6 @@ function getData(req, res) {
 			res.status(200).json(result[0]);
 		}
 	});
-
-	getCharactersFromDb(id, function(error, result){
-
-		if (error || result == null || result.length != 1) {
-			res.status(500).json({success: false, data: error});
-		} 
-		else {
-			var person = result[0];
-			res.status(200).json(result[0]);
-		}
-	});
-
 	
 }
 
