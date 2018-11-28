@@ -24,12 +24,14 @@ app.listen(port, function(req, res){
 function testCallback(req, res){
 	console.log("Getting website...");
 
-	console.log("Trying to connect to a db at: " + dbConnectionString);
+	//console.log("Trying to connect to a db at: " + dbConnectionString);
 
+	//just to load main page
 	res.json({name: "will"});
 
 }
 
+// currently gets all data, will probably change
 function getData(req, res) {
 	var id = req.query.id;
 
@@ -45,6 +47,7 @@ function getData(req, res) {
 	});
 }
 
+// will grab the title from my database
 function getTitleFromDb(id, callback) {
 	console.log("Getting person from DB with id: " + id);
 
@@ -65,5 +68,4 @@ function getTitleFromDb(id, callback) {
 
 		callback(null, result.rows);
 	});
-
 } 

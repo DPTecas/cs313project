@@ -24,3 +24,5 @@ CREATE TABLE dialogues
 	option2 VARCHAR(30) NOT NULL,
 	option3 VARCHAR(30)
 );
+
+INSERT INTO titles(title) VALUES ('Grocery Trip');
