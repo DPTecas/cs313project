@@ -26,3 +26,8 @@ CREATE TABLE dialogues
 );
 
 INSERT INTO titles(title) VALUES ('Grocery Trip');
+
+INSERT INTO characters (name) VALUES ('Becky');
+
+INSERT INTO dialogues (prompt, option1, option2, option3) 
+VALUES ('Hello', 'Hi', 'How are ya?', 'Sup');

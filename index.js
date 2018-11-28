@@ -45,6 +45,28 @@ function getData(req, res) {
 			res.status(200).json(result[0]);
 		}
 	});
+
+	getCharactersFromDb(id, function(error, result){
+
+		if (error || result == null || result.length != 1) {
+			res.status(500).json({success: false, data: error});
+		} 
+		else {
+			var person = result[0];
+			res.status(200).json(result[0]);
+		}
+	});
+
+	getDialoguesFromDb(id, function(error, result){
+
+		if (error || result == null || result.length != 1) {
+			res.status(500).json({success: false, data: error});
+		} 
+		else {
+			var person = result[0];
+			res.status(200).json(result[0]);
+		}
+	});
 }
 
 // will grab the title from my database
@@ -69,3 +91,48 @@ function getTitleFromDb(id, callback) {
 		callback(null, result.rows);
 	});
 } 
+
+function getDialoguesFromDb(id, callback) {
+	console.log("Getting person from DB with id: " + id);
+
+	var sql = "SELECT id, prompt, option1, option2, option3 FROM dialogues WHERE id = $1::int";
+
+	var params = [id];
+
+	pool.query(sql, params, function(err, result) {
+
+		if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+		}
+
+		// Log this to the console for debugging purposes.
+		console.log("Found result: " + JSON.stringify(result.rows));
+
+		callback(null, result.rows);
+	});
+} 
+
+function getCharactersFromDb(id, callback) {
+	console.log("Getting person from DB with id: " + id);
+
+	var sql = "SELECT id, name FROM characters WHERE id = $1::int";
+
+	var params = [id];
+
+	pool.query(sql, params, function(err, result) {
+
+		if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+		}
+
+		// Log this to the console for debugging purposes.
+		console.log("Found result: " + JSON.stringify(result.rows));
+
+		callback(null, result.rows);
+	});
+} 
+
