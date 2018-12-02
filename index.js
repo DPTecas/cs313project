@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 const dbConnectionString = process.env.DATABASE_URL;
 
 app.get("/getTitles", function(req, res){
-	var titles = getTitles(req, res);
+	var titles = JSON.parse(getTitles(req, res));
 	res.render('main', {
 		titles: titles
 	});
@@ -34,7 +34,6 @@ function getTitles(req, res) {
 		} 
 		else {
 			var person = result[0];
-			console.log(JSON.stringify(result[0].title));
 			return person;
 		}
 	});
