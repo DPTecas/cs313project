@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+app.set('view engine', 'ejs');
+
 const { Pool } = require("pg");
 
 const connectionString = process.env.DATABASE_URL;
@@ -14,7 +16,7 @@ const dbConnectionString = process.env.DATABASE_URL;
 app.get("/", testCallback);
 
 app.get("/getData", function(req, res){
-	getData(req, res);
+	//getData(req, res);
 	res.render('main');
 });
 
