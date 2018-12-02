@@ -15,9 +15,7 @@ const dbConnectionString = process.env.DATABASE_URL;
 app.get("/getTitles", function(req, res){
 	var titles = JSON.parse(getTitles(req, res));
 	console.log("BUTTHOLE" + titles.title);
-	res.render('main', {
-		titles: titles
-	});
+	res.render('main');
 });
 
 app.listen(port, function(req, res){
