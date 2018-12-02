@@ -16,7 +16,7 @@ const dbConnectionString = process.env.DATABASE_URL;
 app.get("/", testCallback);
 
 app.get("/getData", function(req, res){
-	//getData(req, res);
+	console.log(getData(req, res));
 	res.render('main');
 });
 
@@ -45,7 +45,7 @@ function getData(req, res) {
 		} 
 		else {
 			var person = result[0];
-			res.status(200).json(result[0]);
+			return person;
 		}
 	});
 	
