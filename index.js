@@ -12,11 +12,8 @@ const pool = new Pool({connectionString: connectionString});
 const port = process.env.PORT || 5000;
 const dbConnectionString = process.env.DATABASE_URL;
 
-// remember no parentheses here for function call
-app.get("/", testCallback);
-
 app.get("/getTitles", function(req, res){
-	var titles = getData(req, res);
+	var titles = getTitles(req, res);
 	res.render('main', {
 		titles: titles
 	});
@@ -25,16 +22,6 @@ app.get("/getTitles", function(req, res){
 app.listen(port, function(req, res){
 	console.log("Server is listening on port " + port);
 });
-
-function testCallback(req, res){
-	console.log("Getting website...");
-
-	//console.log("Trying to connect to a db at: " + dbConnectionString);
-
-	//just to load main page
-	res.json({name: "will"});
-
-}
 
 // currently gets all data, will probably change
 function getTitles(req, res) {
