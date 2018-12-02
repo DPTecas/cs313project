@@ -45,7 +45,7 @@ function getData(req, res) {
 		} 
 		else {
 			var person = result[0];
-			return person;
+			return JSON.stringify(person);
 		}
 	});
 	
