@@ -15,9 +15,11 @@ const dbConnectionString = process.env.DATABASE_URL;
 // remember no parentheses here for function call
 app.get("/", testCallback);
 
-app.get("/getData", function(req, res){
-	console.log("HELOOOOOOOOOOO" + getData(req, res));
-	res.render('main');
+app.get("/getTitles", function(req, res){
+	var titles = getData(req, res);
+	res.render('main', {
+		titles: titles
+	});
 });
 
 app.listen(port, function(req, res){
@@ -35,7 +37,7 @@ function testCallback(req, res){
 }
 
 // currently gets all data, will probably change
-function getData(req, res) {
+function getTitles(req, res) {
 	var id = req.query.id;
 
 	getTitleFromDb(id, function(error, result){
