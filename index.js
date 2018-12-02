@@ -16,7 +16,7 @@ const dbConnectionString = process.env.DATABASE_URL;
 app.get("/", testCallback);
 
 app.get("/getData", function(req, res){
-	console.log(getData(req, res));
+	console.log("HELOOOOOOOOOOO" + getData(req, res));
 	res.render('main');
 });
 
