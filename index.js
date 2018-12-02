@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname));
 
 const { Pool } = require("pg");
 
@@ -15,6 +16,11 @@ const dbConnectionString = process.env.DATABASE_URL;
 app.get("/getTitles", function(req, res){
 	//getTitles(req, res);
 	res.render('main');
+});
+
+app.get("/getMap", function(req, res){
+	//getTitles(req, res);
+	res.render('map');
 });
 
 app.listen(port, function(req, res){
