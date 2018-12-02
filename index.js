@@ -15,6 +15,7 @@ app.get("/", testCallback);
 
 app.get("/getData", function(req, res){
 	getData(req, res);
+	res.render('main');
 });
 
 app.listen(port, function(req, res){
