@@ -10,7 +10,7 @@ function addPath()
 
 $(function() {
 
-	let value = $('#path1').val();
+	let value = $('#opener').val();
 
 	$.ajax({
 		type: "GET",
