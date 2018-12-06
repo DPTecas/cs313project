@@ -6,7 +6,12 @@
     <h1>Pick a story to go through.</h1>
 
     <a href = "http://localhost:5000/getMap">In place of options</a>
-
+    
+    <ul>
+    <% drinks.forEach(function(titles) { %>
+        <li><%= title.name %></li>
+    <% }); %>
+	</ul>
    
 </body>
 </html>

@@ -14,8 +14,8 @@ const port = process.env.PORT || 5000;
 const dbConnectionString = process.env.DATABASE_URL;
 
 app.get("/getTitles", function(req, res){
-	//getTitles(req, res);
-	res.render('main');
+	getTitles(req, res);
+	
 });
 
 app.get("/getMap", function(req, res){
@@ -37,8 +37,8 @@ function getTitles(req, res) {
 			res.status(500).json({success: false, data: error});
 		} 
 		else {
-			var person = result[0];
-			return person;
+			var titles = result[0];
+			res.render('main', {titles:titles});
 		}
 	});
 	
