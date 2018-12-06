@@ -4,12 +4,10 @@
 <html lang="en">
 <main>
     <h1>Pick a story to go through.</h1>
-
-    <a href = "http://localhost:5000/getMap">In place of options</a>
     
     <ul>
     <% titles.forEach(function(title) { %>
-        <li><%= title.title %></li>
+        <a href = "http://localhost:5000/getMap?id=%=title.id%"><%= title.title %></a>
     <% }); %>
 	</ul>
 </main>
