@@ -18,7 +18,7 @@ $(function() {
         success: function (result) {
                 data = result.Search;
 
-                console.log(data[i].prompt);
+                console.log(data[0].prompt);
             }
     });
 
