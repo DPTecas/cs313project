@@ -37,7 +37,7 @@ function getTitles(req, res) {
 			res.status(500).json({success: false, data: error});
 		} 
 		else {
-			var titles = result[0];
+			var titles = result;
 			res.render('main', {titles:titles});
 		}
 	});
