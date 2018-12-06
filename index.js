@@ -13,14 +13,19 @@ const pool = new Pool({connectionString: connectionString});
 const port = process.env.PORT || 5000;
 const dbConnectionString = process.env.DATABASE_URL;
 
+app.use(express.static(__dirname + '/public'));
+
 app.get("/getTitles", function(req, res){
 	getTitles(req, res);
 	
 });
 
 app.get("/getMap", function(req, res){
-	//getTitles(req, res);
 	res.render('map');
+});
+
+app.get("/getDialogues", function(req, res){
+	getDialogues(req, res);
 });
 
 app.listen(port, function(req, res){
@@ -40,15 +45,29 @@ function getTitles(req, res) {
 			var titles = result;
 			res.render('main', {titles:titles});
 		}
-	});
-	
+	});	
+}
+
+function getDialogues(req, res) {
+	var id = req.query.id;
+
+	getDialoguesFromDb(id, function(error, result){
+
+		if (error || result == null || result.length != 1) {
+			res.status(500).json({success: false, data: error});
+		} 
+		else {
+			var dia = result;
+			res.json(dia);
+		}
+	});	
 }
 
 // will grab the title from my database
 function getTitleFromDb(id, callback) {
 	console.log("Getting person from DB with id: " + id);
 
-	var sql = "SELECT id, title FROM titles WHERE id = $1::int";
+	var sql = "SELECT id, title FROM titles";
 
 	var params = [id];
 
