@@ -16,9 +16,9 @@ $(function() {
 		type: "GET",
         url: 'https://glacial-sands-13729.herokuapp.com/getDialogues?id=' + value,
         success: function (result) {
-                data = result.Search;
+                
 
-                console.log(data[0].prompt);
+                console.log(result[0].prompt);
             }
     });
 
