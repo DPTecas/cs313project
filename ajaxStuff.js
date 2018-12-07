@@ -8,7 +8,7 @@ function addPath()
 }
 
 
-$(function() {
+$(function() popup{
 
 	let value = $('#opener').val();
 
@@ -34,8 +34,8 @@ $(function() {
       }
     });
  
-    $("#opener").on("click", function() {
-      $("#dialog").dialog("open");
-    });
+    
+    $("#dialog").dialog("open");
+   
   } );
   
