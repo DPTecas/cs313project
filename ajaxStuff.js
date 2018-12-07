@@ -27,6 +27,8 @@ $(function() {
  
     $(".opener").on("click", function() {
 
+    var value = $(this).val();
+
     $.ajax({
 		type: "GET",
         url: 'https://glacial-sands-13729.herokuapp.com/getDialogues?id=' + value,
