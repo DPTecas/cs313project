@@ -1,3 +1,7 @@
 h1 {
-  float: center;
+  text-align: center;
+}
+
+body {
+  background-image: url("pics/storeMap.png");
 }
