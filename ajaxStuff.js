@@ -23,9 +23,6 @@ function fill()
 }
 
 $(function() {
-
-	
-
     $("#dialog").dialog({
       autoOpen: false,
       show: {
