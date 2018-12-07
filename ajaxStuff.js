@@ -8,7 +8,7 @@ function addPath()
 }
 
 
-$(function() popup{
+$(function popup() {
 
 	let value = $('#opener').val();
 
