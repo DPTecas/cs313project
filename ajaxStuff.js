@@ -9,19 +9,7 @@ function addPath()
 
 function fill()
 {
-	let value = $(this).val();
-
-	$.ajax({
-		type: "GET",
-        url: 'https://glacial-sands-13729.herokuapp.com/getDialogues?id=' + value,
-        success: function (result) {
-                
-        		$('#prompt').html(JSON.stringify(result[0].prompt));
-        		$('#op1').html(JSON.stringify(result[0].option1));
-        		$('#op2').html(JSON.stringify(result[0].option2));
-        		$('#op3').html(JSON.stringify(result[0].option3));
-            }
-    });
+	console.log("hello");
 }
 
 $(function() {
@@ -38,7 +26,24 @@ $(function() {
     });
  
     $(".opener").on("click", function() {
-      $("#dialog").dialog("open");
+
+    $.ajax({
+		type: "GET",
+        url: 'https://glacial-sands-13729.herokuapp.com/getDialogues?id=' + value,
+        success: function (result) {
+                
+        		$('#prompt').html(JSON.stringify(result[0].prompt));
+        		$('#op1').html(JSON.stringify(result[0].option1));
+        		$('#op2').html(JSON.stringify(result[0].option2));
+        		$('#op3').html(JSON.stringify(result[0].option3));
+            }
+      
     });
+
+    $("#dialog").dialog("open");
+	}
+
+
+
   } );
   
