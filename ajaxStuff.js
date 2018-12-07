@@ -9,7 +9,7 @@ function addPath()
 
 function fill()
 {
-	let value = $('.opener').val();
+	let value = $(this).val();
 
 	$.ajax({
 		type: "GET",
