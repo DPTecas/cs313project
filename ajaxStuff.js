@@ -9,7 +9,7 @@ function addPath()
 
 function fill()
 {
-	let value = $('#opener').val();
+	let value = $('.opener').val();
 
 	$.ajax({
 		type: "GET",
@@ -17,7 +17,9 @@ function fill()
         success: function (result) {
                 
         		$('#prompt').html(JSON.stringify(result[0].prompt));
-                console.log(result[0].prompt);
+        		$('#op1').html(JSON.stringify(result[0].option1));
+        		$('#op2').html(JSON.stringify(result[0].option2));
+        		$('#op3').html(JSON.stringify(result[0].option3));
             }
     });
 }
