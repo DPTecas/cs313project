@@ -17,7 +17,6 @@ app.use(express.static(__dirname + '/public'));
 
 app.get("/getTitles", function(req, res){
 	getTitles(req, res);
-	
 });
 
 app.get("/getMap", function(req, res){
