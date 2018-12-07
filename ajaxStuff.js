@@ -38,7 +38,7 @@ $(function() {
       }
     });
  
-    $("#opener").on("click", function() {
+    $(".opener").on("click", function() {
       $("#dialog").dialog("open");
     });
   } );
