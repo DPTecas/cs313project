@@ -7,9 +7,8 @@ function addPath()
 	});
 }
 
-
-function popup() {
-
+function fill()
+{
 	let value = $('#opener').val();
 
 	$.ajax({
@@ -21,6 +20,11 @@ function popup() {
                 console.log(result[0].prompt);
             }
     });
+}
+
+$(function() {
+
+	
 
     $("#dialog").dialog({
       autoOpen: false,
@@ -34,8 +38,8 @@ function popup() {
       }
     });
  
-    
-    $("#dialog").dialog("open");
-   
-  };
+    $("#opener").on("click", function() {
+      $("#dialog").dialog("open");
+    });
+  } );
   
