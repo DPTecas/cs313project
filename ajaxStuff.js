@@ -34,7 +34,7 @@ $(function() {
         url: 'https://glacial-sands-13729.herokuapp.com/getDialogues?id=' + value,
         success: function (result) {
                 
-        		$('#dialog').html(result[0].prompt);
+        		$('#promt').html(result[0].prompt);
         		$('#op1').html(JSON.stringify(result[0].option1));
         		$('#op2').html(JSON.stringify(result[0].option2));
         		$('#op3').html(JSON.stringify(result[0].option3));
