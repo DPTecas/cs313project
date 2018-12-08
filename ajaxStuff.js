@@ -7,10 +7,6 @@ function addPath()
 	});
 }
 
-function fill()
-{
-	console.log("hello");
-}
 
 $(function() {
     $("#dialog").dialog({

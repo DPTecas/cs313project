@@ -43,6 +43,7 @@ function getTitles(req, res) {
 		else {
 			var titles = result;
 			res.render('main', {titles:titles});
+			res.end();
 		}
 	});	
 }
