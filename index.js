@@ -107,25 +107,3 @@ function getDialoguesFromDb(id, callback) {
 	});
 } 
 
-function getCharactersFromDb(id, callback) {
-	console.log("Getting person from DB with id: " + id);
-
-	var sql = "SELECT id, name FROM characters WHERE id = $1::int";
-
-	var params = [id];
-
-	pool.query(sql, params, function(err, result) {
-
-		if (err) {
-			console.log("Error in query: ")
-			console.log(err);
-			callback(err, null);
-		}
-
-		// Log this to the console for debugging purposes.
-		console.log("Found result: " + JSON.stringify(result.rows));
-
-		callback(null, result.rows);
-	});
-} 
-
