@@ -33,6 +33,8 @@ $(function() {
 		type: "GET",
         url: 'https://glacial-sands-13729.herokuapp.com/getDialogues?id=' + value,
         success: function (result) {
+
+        		console.log(result[0].prompt);
                 
         		$('#promt').html(result[0].prompt);
         		$('#op1').html(JSON.stringify(result[0].option1));
