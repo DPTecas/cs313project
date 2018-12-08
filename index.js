@@ -33,9 +33,7 @@ app.listen(port, function(req, res){
 
 // currently gets all data, will probably change
 function getTitles(req, res) {
-	var id = req.query.id;
-
-	getTitleFromDb(id, function(error, result){
+	getTitleFromDb(function(error, result){
 
 		if (error || result == null || result.length != 1) {
 			res.status(500).json({success: false, data: error});
@@ -64,12 +62,10 @@ function getDialogues(req, res) {
 }
 
 // will grab the title from my database
-function getTitleFromDb(id, callback) {
+function getTitleFromDb(callback) {
 	var sql = "SELECT id, title FROM titles";
 
-	var params = [id];
-
-	pool.query(sql, params, function(err, result) {
+	pool.query(sql, function(err, result) {
 
 		if (err) {
 			console.log("Error in query: ")
