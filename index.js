@@ -65,8 +65,6 @@ function getDialogues(req, res) {
 
 // will grab the title from my database
 function getTitleFromDb(id, callback) {
-	console.log("Getting person from DB with id: " + id);
-
 	var sql = "SELECT id, title FROM titles";
 
 	var params = [id];
