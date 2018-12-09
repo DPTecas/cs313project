@@ -124,7 +124,7 @@ function getDialoguesFromDb(id, callback) {
 function getResponsesFromDb(id, callback) {
 	console.log("Getting person from DB with id: " + id);
 
-	var sql = "SELECT r1, r2, r3 FROM responses WHERE R.dia_id = $1::int";
+	var sql = "SELECT r1, r2, r3 FROM responses WHERE dia_id = $1::int";
 
 	var params = [id];
 
