@@ -7,7 +7,7 @@ function addPath()
 	});
 }
 
-function fillResponse()
+function fillResponse(name)
 {
 	var value = document.getElementById("r1").value;
 
@@ -16,11 +16,11 @@ function fillResponse()
         url: 'https://glacial-sands-13729.herokuapp.com/getResponses?id=' + value,
         success: function (result) {
              
-        		if ($(this.name() == "r1"))
+        		if (name == "r1")
         			$('#response').html(result[0].r1);
-        		else if ($(this.name() == "r2"))
+        		else if (name == "r2")
         			$('#response').html(result[0].r1);
-        		else if ($(this.name() == "r3"))
+        		else if (name == "r3")
         			$('#response').html(result[0].r3);
             }
       
