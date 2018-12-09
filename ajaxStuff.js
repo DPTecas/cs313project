@@ -19,7 +19,7 @@ function fillResponse(name)
         		if (name == "r1")
         			$('#response').html(result[0].r1);
         		else if (name == "r2")
-        			$('#response').html(result[0].r1);
+        			$('#response').html(result[0].r2);
         		else if (name == "r3")
         			$('#response').html(result[0].r3);
             }
