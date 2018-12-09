@@ -27,6 +27,10 @@ app.get("/getDialogues", function(req, res){
 	getDialogues(req, res);
 });
 
+app.get("/getResponses", function(req, res){
+	getResponses(req, res);
+});
+
 app.listen(port, function(req, res){
 	console.log("Server is listening on port " + port);
 });
