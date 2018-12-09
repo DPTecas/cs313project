@@ -42,7 +42,7 @@ $(function() {
     });
  
     $(".opener").on("click", function() {
-
+    $(this).hide();
     var value = $(this).val();
 
     $.ajax({
