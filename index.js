@@ -61,6 +61,21 @@ function getDialogues(req, res) {
 	});	
 }
 
+function getResponses(req, res) {
+	var id = req.query.id;
+
+	getResponsesFromDb(id, function(error, result){
+
+		if (error || result == null || result.length != 1) {
+			res.status(500).json({success: false, data: error});
+		} 
+		else {
+			var dia = result;
+			res.json(dia);
+		}
+	});	
+}
+
 // will grab the title from my database
 function getTitleFromDb(callback) {
 	var sql = "SELECT id, title FROM titles";
@@ -101,4 +116,27 @@ function getDialoguesFromDb(id, callback) {
 		callback(null, result.rows);
 	});
 } 
+
+function getResponsesFromDb(id, callback) {
+	console.log("Getting person from DB with id: " + id);
+
+	var sql = "SELECT r1, r2, r3 FROM responses WHERE R.dia_id = $1::int";
+
+	var params = [id];
+
+	pool.query(sql, params, function(err, result) {
+
+		if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+		}
+
+		// Log this to the console for debugging purposes.
+		console.log("Found result: " + JSON.stringify(result.rows));
+
+		callback(null, result.rows);
+	});
+} 
+
 
