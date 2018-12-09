@@ -62,6 +62,7 @@ $(function() {
     document.getElementById("r1").value = value;
     document.getElementById("r2").value = value;
     document.getElementById("r3").value = value;
+    document.getElementById("response").innerHTML = "";
 
     $("#dialog").dialog("open");
 	});
