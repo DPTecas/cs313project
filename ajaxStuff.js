@@ -9,7 +9,7 @@ function addPath()
 
 function fillResponse()
 {
-	var value = $(this).val();
+	var value = document.getElementById("r1").value;
 
 	$.ajax({
 		type: "GET",
