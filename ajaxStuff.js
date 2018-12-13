@@ -18,6 +18,7 @@ $(function()
         		if (result[i] != undefined)
         			$(tag).html(result[i].name);// + result[i].score + result[i].category);
         	}
+        	$("#board").dialog("open");
         }
     });
 });
@@ -89,6 +90,19 @@ function fillResponse(name)
 
 
 $(function() {
+
+	$("#board").dialog({
+	  autoOpen: false,
+        show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+
 	$("#insert").dialog({
 	  autoOpen: false,
         show: {
