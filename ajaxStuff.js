@@ -73,7 +73,7 @@ $(function() {
         		$('#op2').html(result[0].option2);
         		$('#op3').html(result[0].option3);
 
-        		if(value0 == "10")
+        		if(value == "10")
         			$("#insert").dialog("open");
 
         		$("#dialog").dialog("open");
