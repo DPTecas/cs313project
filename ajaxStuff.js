@@ -1,11 +1,23 @@
-function addPath()
+var insanity = 0;
+var courage = 0;
+var boring = 0;
+
+$(function()
 {
-	$(document).ready(function(){
-	    $("#path10").click(function(){
-	    	
-	        $("#insert").show();
-	    });
-	});
+	var name = document.getElementById("name").value;
+	var value = document.getElementById("r1").value;
+
+	$.ajax({
+		type: "GET",
+        url: 'https://glacial-sands-13729.herokuapp.com/getScores?id=' + value,
+        success: function (result) {
+        	for (var i = 10; i > 0; i++)
+        	{
+        		tag = '#b' + i;
+        		$(tag).html(result[i].name + result[i].score + result[i].category);
+        	}
+        }
+    });
 }
 
 function fillResponse(name)
@@ -18,11 +30,20 @@ function fillResponse(name)
         success: function (result) {
              
         		if (name == "r1")
+        		{
         			$('#response').html(result[0].r1);
+        			insanity += 1;
+        		}
         		else if (name == "r2")
+        		{
         			$('#response').html(result[0].r2);
+        			courage += 1;
+        		}
         		else if (name == "r3")
+        		{
         			$('#response').html(result[0].r3);
+        			boring += 1;
+        		}
             }   
     });
 }

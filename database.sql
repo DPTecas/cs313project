@@ -22,6 +22,15 @@ CREATE TABLE responses
 	r3 TEXT NOT NULL
 );
 
+CREATE TABLE scores
+(
+	id SERIAL PRIMARY KEY NOT NULL,
+	title_id INT NOT NULL REFERENCES titles(id),
+	name VARCHAR(30) NOT NULL,
+	score INT NOT NULL,
+	category VARCHAR(15) NOT NULL
+)
+
 INSERT INTO titles(title) VALUES ('Grocery Trip');
 
 INSERT INTO dialogues (prompt, option1, option2, option3) 

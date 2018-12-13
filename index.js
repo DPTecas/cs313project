@@ -31,6 +31,10 @@ app.get("/getResponses", function(req, res){
 	getResponses(req, res);
 });
 
+app.get("/getScores", function(req, res){
+	getScores(req, res);
+});
+
 app.listen(port, function(req, res){
 	console.log("Server is listening on port " + port);
 });
@@ -79,6 +83,41 @@ function getResponses(req, res) {
 		}
 	});	
 }
+
+function getScores(req, res) {
+	var id = req.query.id;
+
+	getResponsesFromDb(id, function(error, result){
+
+		if (error || result == null || result.length != 1) {
+			res.status(500).json({success: false, data: error});
+		} 
+		else {
+			var score = result;
+			res.json(score);
+		}
+	});	
+}
+
+function getScoresFromDb(callback) {
+	var sql = "SELECT name, score, category FROM scores WHERE title_id = $1::int";
+
+	var params = [id];
+
+	pool.query(sql, params, function(err, result) {
+
+		if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+		}
+
+		// Log this to the console for debugging purposes.
+		console.log("Found result: " + JSON.stringify(result.rows));
+
+		callback(null, result.rows);
+	});
+} 
 
 // will grab the title from my database
 function getTitleFromDb(callback) {
