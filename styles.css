@@ -7,7 +7,11 @@ body {
   background-size: 1500px 700px;
 }
 
-
+#path1{
+  position: absolute;
+  top:640px;
+  left:380px;
+}
 
 #path2{
   position: absolute;
@@ -116,9 +120,6 @@ body {
   text-decoration: none;
   font-weight: 100;
   font-size: 1.1em;
-  position: absolute;
-  top:640px;
-  left:380px;
 }
 /* 
     Changing the shape on hover. I change the color of the stroke,
