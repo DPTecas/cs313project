@@ -36,7 +36,7 @@ function insertData()
 	$.ajax({
 		type: "POST",
         url: 'https://glacial-sands-13729.herokuapp.com/postScores',
-        data: data,
+        data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (result) {
