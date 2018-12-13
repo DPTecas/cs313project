@@ -109,7 +109,7 @@ function postScores(req, res) {
 }
 
 function postScoresFromDb(id, name, score, category, callback) {
-	var sql = "INSERT INTO scores (title_id, name, score, category) VALUES ($1::int, $2::str, $3::int, $4::str)";
+	var sql = "INSERT INTO scores SET ?";
 
 	var params = [id, name, score, category];
 
