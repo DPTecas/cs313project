@@ -40,7 +40,7 @@ function insertData()
         dataType: "json",
         contentType: "application/json",
         success: function (result) {
-        	alert(result[0] + 'Successfully inserted name into the board!');
+        	alert('Successfully inserted name into the board!');
         }
     });
 }

@@ -104,12 +104,13 @@ function postScores(req, res) {
 		else {
 			var score = result;
 			res.send(JSON.stringify(score));
+			res.end();
 		}
 	});	
 }
 
 function postScoresFromDb(title_id, name, score, category, callback) {
-	var sql = "INSERT INTO scores (title_id, name, score, category) VALUES ($1::int, $2, $3::int, $4)";
+	var sql = "INSERT INTO scores (title_id, name, score, category) VALUES ($1, $2, $3, $4) RETURNING id";
 
 	var params = [title_id, name, score, category];
 
@@ -120,6 +121,8 @@ function postScoresFromDb(title_id, name, score, category, callback) {
 			console.log(err);
 			callback(err, null);
 		}
+
+
 
 		// Log this to the console for debugging purposes.
 		console.log("Found result: " + JSON.stringify(result.rows));
