@@ -113,7 +113,7 @@ function postScoresFromDb(title_id, name, score, category, callback) {
 
 	var params = [title_id, name, score, category];
 
-	connectionString.query(sql, params, function(err, result) {
+	pool.query(sql, params, function(err, result) {
 
 		if (err) {
 			console.log("Error in query: ")
