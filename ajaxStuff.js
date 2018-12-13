@@ -13,7 +13,8 @@ $(function()
         	for (var i = 10; i > 0; i++)
         	{
         		tag = '#b' + i;
-        		$(tag).html(result[i].name + result[i].score + result[i].category);
+        		if (result[i].name != typeof undefined)
+        			$(tag).html(result[i].name + result[i].score + result[i].category);
         	}
         }
     });
