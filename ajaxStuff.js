@@ -4,7 +4,6 @@ var boring = 0;
 
 $(function()
 {
-	var name = document.getElementById("name").value;
 	var value = document.getElementById("r1").value;
 
 	$.ajax({
