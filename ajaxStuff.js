@@ -17,9 +17,13 @@ $(function()
         		if (result[i] != undefined)
         			$('#b1').html(result[i].name + result[i].score + result[i].category);
         	}
-        	$("#board").dialog("open");
+        	
         }
     });
+
+    $("#boardOpen").on("click", function(){
+    	$("#board").dialog("open");
+    }
 });
 
 function insertData()
