@@ -1,8 +1,8 @@
 function addPath()
 {
 	$(document).ready(function(){
-	    $("#path1").click(function(){
-	        $(this).hide();
+	    $("#path10").click(function(){
+	        $("#insertName").show();
 	    });
 	});
 }
