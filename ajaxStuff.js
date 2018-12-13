@@ -13,7 +13,7 @@ $(function()
         	for (var i = 10; i > 0; i++)
         	{
         		tag = '#b' + i;
-        		if (result[i].name != typeof undefined)
+        		if ($.trim(result[i]))
         			$(tag).html(result[i].name + result[i].score + result[i].category);
         	}
         }
