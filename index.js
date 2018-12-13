@@ -103,6 +103,7 @@ function postScores(req, res) {
 		} 
 		else {
 			var score = result;
+			res.redirect('/');
 			res.end();
 		}
 	});	
@@ -120,8 +121,6 @@ function postScoresFromDb(title_id, name, score, category, callback) {
 			console.log(err);
 			callback(err, null);
 		}
-
-
 
 		// Log this to the console for debugging purposes.
 		console.log("Found result: " + JSON.stringify(result.rows));
