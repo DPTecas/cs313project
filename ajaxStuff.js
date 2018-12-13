@@ -49,6 +49,7 @@ $(function() {
     document.getElementById("r2").value = "";
     document.getElementById("r3").value = "";
     document.getElementById("response").innerHTML = "";
+    document.getElementById("r1").autofocus = false;
 
     $.ajax({
 		type: "GET",
