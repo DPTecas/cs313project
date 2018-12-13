@@ -10,7 +10,7 @@ $(function()
 		type: "GET",
         url: 'https://glacial-sands-13729.herokuapp.com/getScores?id=' + value,
         success: function (result) {
-        	for (var i = 10; i > 0; i++)
+        	for (var i = 10; i > 0; i--)
         	{
         		tag = '#b' + i;
         		if (result[i] != undefined)
