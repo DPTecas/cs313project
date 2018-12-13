@@ -36,7 +36,7 @@ function insertData()
 	$.ajax({
 		type: "POST",
         url: 'https://glacial-sands-13729.herokuapp.com/postScores',
-        data: JSON.stringify(data),
+        data: data,
         success: function (result) {
         	alert('Successfully inserted name intot the board!');
         }
