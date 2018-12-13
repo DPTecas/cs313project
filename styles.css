@@ -85,12 +85,8 @@ button {
     -moz-appearance: none;
 }
 
-button:hover,
-button:focus {
+button:hover {
     background: black;
-}
-
-button:focus {
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
