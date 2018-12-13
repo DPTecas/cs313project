@@ -38,6 +38,8 @@ function insertData()
 		type: "POST",
         url: 'https://glacial-sands-13729.herokuapp.com/postScores',
         data: data,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
         success: function (result) {
         	alert('Successfully inserted name into the board!');
         }
