@@ -129,9 +129,9 @@ function postScoresFromDb(title_id, name, score, category, callback) {
 }
 
 function getScores(req, res) {
-	var id = req.query.id;
+	var title_id = req.query.title_id;
 
-	getScoresFromDb(id, function(error, result){
+	getScoresFromDb(title_id, function(error, result){
 
 		if (error || result == null || result.length != 1) {
 			res.status(500).json({success: false, data: error});
@@ -143,10 +143,10 @@ function getScores(req, res) {
 	});	
 }
 
-function getScoresFromDb(id, callback) {
+function getScoresFromDb(title_id, callback) {
 	var sql = "SELECT name, score, category FROM scores WHERE title_id = $1::int";
 
-	var params = [id];
+	var params = [title_id];
 
 	pool.query(sql, params, function(err, result) {
 
