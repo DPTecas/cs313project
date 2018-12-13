@@ -12,9 +12,8 @@ $(function()
 		type: "GET",
         url: 'https://glacial-sands-13729.herokuapp.com/getScores?id=' + value,
         success: function (result) {
-        	for (var i = 9; i > 0; i--)
+        	for (var i = 9; i >= 0; i--)
         	{
-        		
         		if (result[i] != undefined)
         			$('#b1').html(result[i].name);// + result[i].score + result[i].category);
         	}
