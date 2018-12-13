@@ -71,7 +71,6 @@ function getDialogues(req, res) {
 		else {
 			var dia = result;
 			res.json(dia);
-			res.end();
 		}
 	});	
 }
@@ -87,7 +86,6 @@ function getResponses(req, res) {
 		else {
 			var dia = result;
 			res.json(dia);
-			res.end();
 		}
 	});	
 }
@@ -106,7 +104,6 @@ function postScores(req, res) {
 		else {
 			var score = result;
 			res.send(JSON.stringify(score));
-			res.end();
 		}
 	});	
 }
