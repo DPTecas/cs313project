@@ -23,7 +23,7 @@ $(function()
 
     $("#boardOpen").on("click", function(){
     	$("#board").dialog("open");
-    }
+    });
 });
 
 function insertData()
