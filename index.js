@@ -91,10 +91,10 @@ function getResponses(req, res) {
 }
 
 function postScores(req, res) {
-	var id = req.query.title_id;
-	var name = req.query.name;
-	var score = req.query.score;
-	var category = req.query.category;
+	var id = req.body.title_id;
+	var name = req.body.name;
+	var score = req.body.score;
+	var category = req.body.category;
 
 	postScoresFromDb(id, name, score, category, function(error, result){
 
