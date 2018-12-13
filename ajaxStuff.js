@@ -56,7 +56,7 @@ $(function() {
     $(".opener").on("click", function() {
     $(this).hide();
     var value = $(this).val();
-    var id = $(this).id();
+    
 
     document.getElementById("r1").value = "Loading...";
     document.getElementById("r2").value = "";
@@ -73,7 +73,7 @@ $(function() {
         		$('#op2').html(result[0].option2);
         		$('#op3').html(result[0].option3);
 
-        		if(id == "path10")
+        		if(value0 == "10")
         			$("#insert").dialog("open");
 
         		$("#dialog").dialog("open");
