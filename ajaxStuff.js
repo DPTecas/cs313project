@@ -45,6 +45,11 @@ $(function() {
     $(this).hide();
     var value = $(this).val();
 
+    document.getElementById("r1").value = "Loading...";
+    document.getElementById("r2").value = "";
+    document.getElementById("r3").value = "";
+    document.getElementById("response").innerHTML = "";
+
     $.ajax({
 		type: "GET",
         url: 'https://glacial-sands-13729.herokuapp.com/getDialogues?id=' + value,
@@ -64,11 +69,7 @@ $(function() {
     document.getElementById("r1").value = value;
     document.getElementById("r2").value = value;
     document.getElementById("r3").value = value;
-    document.getElementById("response").innerHTML = "";
-
     
 
-
-    
 	});
   } );

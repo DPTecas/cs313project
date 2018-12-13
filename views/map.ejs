@@ -16,10 +16,10 @@
     <h1>Begin your adventure</h1>
 
     <div id="dialog" title="Encounter!">
-    	<p id = "prompt">Filler</p>
-	    	<p id = "op1">Filler</p>
-	    	<p id = "op2">Filler</p>
-	    	<p id = "op3">Filler</p>
+    	<p id = "prompt">Loading...</p>
+	    	<p id = "op1"></p>
+	    	<p id = "op2"></p>
+	    	<p id = "op3"></p>
 	    	<button value = "2" name = "r1" id = "r1" onclick = "fillResponse(this.name)">Option 1</button>
 	    	<button value = "2" name = "r2" id = "r2" onclick = "fillResponse(this.name)">Option 2</button>
 	    	<button value = "2" name = "r3" id = "r3" onclick = "fillResponse(this.name)">Option 3</button>
@@ -27,6 +27,19 @@
     </div>
 
     <button class="opener" id = "path1" value = "1">Visit</button>
+
+    <div class="svg-wrapper">
+      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+        <rect id="shape" height="40" width="150" />
+        <div id="text">
+          <a href=""><span class="spot"></span>Button 1</a>
+        </div>
+      </svg>
+    </div>
+
+
+
+
     <button class="opener" id = "path2" value = "2">Visit</button>
     <button class="opener" id = "path3" value = "3">Visit</button>
     <button class="opener" id = "path4" value = "4">Visit</button>
