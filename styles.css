@@ -7,6 +7,10 @@ body {
   background-size: 1500px 700px;
 }
 
+#insert{
+  visibility: hidden;
+}
+
 #path1{
   position: absolute;
   top:630px;

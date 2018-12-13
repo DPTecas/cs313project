@@ -2,7 +2,18 @@ function addPath()
 {
 	$(document).ready(function(){
 	    $("#path10").click(function(){
-	        $("#insertName").show();
+	    	$("#insert").dialog({
+		      autoOpen: false,
+		      show: {
+		        effect: "blind",
+		        duration: 1000
+		      },
+		      hide: {
+		        effect: "explode",
+		        duration: 1000
+		      }
+		    });
+	        $("#insert").show();
 	    });
 	});
 }
@@ -22,8 +33,7 @@ function fillResponse(name)
         			$('#response').html(result[0].r2);
         		else if (name == "r3")
         			$('#response').html(result[0].r3);
-            }
-      
+            }   
     });
 }
 
@@ -61,9 +71,7 @@ $(function() {
         		$('#op3').html(result[0].option3);
 
         		$("#dialog").dialog("open");
-            }
-
-      
+            }    
     });
 
     document.getElementById("r1").value = value;
