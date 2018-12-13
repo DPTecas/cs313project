@@ -103,7 +103,7 @@ function postScores(req, res) {
 		} 
 		else {
 			var score = result;
-			res.send(score);
+			res.send(JSON.stringify(score));
 		}
 	});	
 }
@@ -111,7 +111,7 @@ function postScores(req, res) {
 function postScoresFromDb(title_id, name, score, category, callback) {
 	var sql = "INSERT INTO scores SET title_id = ?, name = ?, score = ?, category = ?";
 
-	var params = {title_id, name, score, category};
+	var params = [title_id, name, score, category];
 
 	pool.query(sql, params, function(err, result) {
 
