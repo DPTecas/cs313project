@@ -29,7 +29,7 @@ CREATE TABLE scores
 	name VARCHAR(30) NOT NULL,
 	score INT NOT NULL,
 	category VARCHAR(15) NOT NULL
-)
+);
 
 INSERT INTO titles(title) VALUES ('Grocery Trip');
 
