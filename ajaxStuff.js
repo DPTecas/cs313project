@@ -1,6 +1,8 @@
 var insanity = 0;
 var courage = 0;
 var boring = 0;
+var mainTrait = "";
+var mainScore = 0;
 
 $(function()
 {
@@ -19,6 +21,21 @@ $(function()
         }
     });
 });
+
+function insertData()
+{
+	var value = document.getElementById("r1").value;
+	var name = document.getElementById("name").value;
+
+	$.ajax({
+		type: "POST",
+        url: 'https://glacial-sands-13729.herokuapp.com/postScores',
+        data:{'title_id='+ value, 'name='+name, 'score='+mainScore, 'category='+mainTrait}
+        success: function (result) {
+        	alert('Successfully inserted name intot the board!');
+        }
+    });
+}
 
 function fillResponse(name)
 {
@@ -43,6 +60,22 @@ function fillResponse(name)
         		{
         			$('#response').html(result[0].r3);
         			boring += 1;
+        		}
+
+        		if (insanity > boring && insanity > courage)
+        		{
+        			mainTrait = "Insane";
+        			mainScore = insanity;
+        		}
+        		else if (boring > insanity && boring > courage)
+        		{
+        			mainTrait = "Boring";
+        			mainScore = boring;
+        		}
+        		else 
+        		{
+        			mainTrait = "Courageous";
+        			mainScore = courage;
         		}
             }   
     });

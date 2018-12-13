@@ -35,6 +35,10 @@ app.get("/getScores", function(req, res){
 	getScores(req, res);
 });
 
+app.post("/postScores", function(req, res){
+	postScores(req, res);
+});
+
 app.listen(port, function(req, res){
 	console.log("Server is listening on port " + port);
 });
@@ -84,10 +88,13 @@ function getResponses(req, res) {
 	});	
 }
 
-function getScores(req, res) {
-	var id = req.query.id;
+function postScores(req, res) {
+	var id = req.query.title_id;
+	var name = req.query.name;
+	var score = req.query.score;
+	var category = req.query.category;
 
-	getResponsesFromDb(id, function(error, result){
+	getResponsesFromDb(id, name, score, category, function(error, result){
 
 		if (error || result == null || result.length != 1) {
 			res.status(500).json({success: false, data: error});
@@ -99,7 +106,42 @@ function getScores(req, res) {
 	});	
 }
 
-function getScoresFromDb(callback) {
+function postScoresFromDb(id, name, score, category, callback) {
+	var sql = "INSERT INTO scores (title_id, name, score, category) VALUES ($1::int, $2::str, $3::int, $4::str)";
+
+	var params = [id, name, score, category];
+
+	pool.query(sql, params, function(err, result) {
+
+		if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+		}
+
+		// Log this to the console for debugging purposes.
+		console.log("Found result: " + JSON.stringify(result.rows));
+
+		callback(null, result.rows);
+	});
+}
+
+function getScores(req, res) {
+	var id = req.query.id;
+
+	getScoresFromDb(id, function(error, result){
+
+		if (error || result == null || result.length != 1) {
+			res.status(500).json({success: false, data: error});
+		} 
+		else {
+			var score = result;
+			res.json(score);
+		}
+	});	
+}
+
+function getScoresFromDb(id, callback) {
 	var sql = "SELECT name, score, category FROM scores WHERE title_id = $1::int";
 
 	var params = [id];
