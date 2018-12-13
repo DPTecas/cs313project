@@ -1,7 +1,7 @@
 var insanity = 0;
 var courage = 0;
 var boring = 0;
-var mainTrait = "";
+var mainTrait = "Courageous";
 var mainScore = 0;
 
 $(function()
