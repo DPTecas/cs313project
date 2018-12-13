@@ -16,7 +16,7 @@ $(function()
         	{
         		tag = '#b' + i;
         		if (result[i] != undefined)
-        			$(tag).html(result[i].name + result[i].score + result[i].category);
+        			$(tag).html(result[i].name);// + result[i].score + result[i].category);
         	}
         }
     });

@@ -108,10 +108,10 @@ function postScores(req, res) {
 	});	
 }
 
-function postScoresFromDb(id, name, score, category, callback) {
+function postScoresFromDb(title_id, name, score, category, callback) {
 	var sql = "INSERT INTO scores SET ?";
 
-	var params = [id, name, score, category];
+	var params = [title_id, name, score, category];
 
 	pool.query(sql, params, function(err, result) {
 
