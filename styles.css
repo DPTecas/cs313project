@@ -9,72 +9,72 @@ body {
 
 #path1{
   position: absolute;
-  top:640px;
-  left:380px;
+  top:630px;
+  left:360px;
 }
 
 #path2{
   position: absolute;
-  top:520px;
-  left:650px;
+  top:500px;
+  left:640px;
 }
 
 #path3{
   position: absolute;
-  top:400px;
-  left:650px;
+  top:385px;
+  left:640px;
 }
 
 #path4{
   position: absolute;
-  top:290px;
-  left:650px;
+  top:270px;
+  left:640px;
 }
 
 #path5{
   position: absolute;
-  top:120px;
-  left:650px;
+  top:105px;
+  left:640px;
 }
 
 #path6{
   position: absolute;
-  top:600px;
-  left:100px;
+  top:590px;
+  left:90px;
 }
 
 #path7{
   position: absolute;
-  top:410px;
+  top:395px;
   left:845px;
 }
 
 #path8{
   position: absolute;
-  top:290px;
+  top:270px;
   left:840px;
 }
 
 #path9{
   position: absolute;
-  top:120px;
+  top:104px;
   left:840px;
 }
 
 #path10{
   position: absolute;
-  top:640px;
+  top:615px;
   left:880px;
 }
 
 button {
     display: inline-block;
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     margin: 0;
     text-decoration: none;
-    background: #0069ed;
-    color: #ffffff;
+    background: #DDDDDD;
+    color: #AAAAAA;
     font-family: sans-serif;
     font-size: 1rem;
     cursor: pointer;
@@ -87,7 +87,7 @@ button {
 
 button:hover,
 button:focus {
-    background: #0053ba;
+    background: black;
 }
 
 button:focus {
