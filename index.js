@@ -103,8 +103,7 @@ function postScores(req, res) {
 		} 
 		else {
 			var score = result;
-			res.send(JSON.stringify(result));
-			res.end();
+			res.status(200).json(score);
 		}
 	});	
 }
