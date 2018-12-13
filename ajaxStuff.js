@@ -39,7 +39,7 @@ function insertData()
         url: 'https://glacial-sands-13729.herokuapp.com/postScores',
         data: data,
         success: function (result) {
-        	alert('Successfully inserted name intot the board!');
+        	alert('Successfully inserted name into the board!');
         }
     });
 }
