@@ -15,7 +15,7 @@ $(function()
         	for (var i = 9; i >= 0; i--)
         	{
         		if (result[i] != undefined)
-        			$('#b1').html(result[i].name + result[i].score + result[i].category);
+        			$('#b'+i).html(result[i].name + result[i].score + result[i].category);
         	}
         	$("#board").dialog("open");
         }
