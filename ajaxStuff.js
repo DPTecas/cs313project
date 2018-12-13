@@ -27,10 +27,16 @@ function insertData()
 	var value = document.getElementById("r1").value;
 	var name = document.getElementById("name").value;
 
+	var data = {};
+	data.title_id = value;
+	data.name = name;
+	data.score = mainScore;
+	data.category = mainTrait;
+
 	$.ajax({
 		type: "POST",
         url: 'https://glacial-sands-13729.herokuapp.com/postScores',
-        data:{'title_id='+ value, 'name='+name, 'score='+mainScore, 'category='+mainTrait}
+        data: JSON.stringify(data),
         success: function (result) {
         	alert('Successfully inserted name intot the board!');
         }
