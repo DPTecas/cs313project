@@ -103,14 +103,14 @@ function postScores(req, res) {
 		} 
 		else {
 			var score = result;
-			res.status(200).json(score);
+			res.send(JSON.stringify(result));
 			res.end();
 		}
 	});	
 }
 
 function postScoresFromDb(title_id, name, score, category, callback) {
-	var sql = "INSERT INTO scores (title_id, name, score, category) VALUES ($1, $2, $3, $4) RETURNING id";
+	var sql = 'INSERT INTO scores (title_id, name, score, category) VALUES ($1, $2, $3, $4) RETURNING id';
 
 	var params = [title_id, name, score, category];
 
