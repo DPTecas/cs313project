@@ -41,7 +41,11 @@ $(function() {
       }
     });
  
-    $(".opener").on("click", function() {
+    $(".opener").on("click", function(function() {
+	{
+	$("#dialog").dialog("open");
+	}
+ 	{
     $(this).hide();
     var value = $(this).val();
 
@@ -64,10 +68,7 @@ $(function() {
     document.getElementById("r3").value = value;
     document.getElementById("response").innerHTML = "";
 
-    $("#dialog").dialog("open");
+    
 	});
-
-
-
   } );
-  
+
