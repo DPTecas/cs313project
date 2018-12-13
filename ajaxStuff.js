@@ -41,11 +41,7 @@ $(function() {
       }
     });
  
-    $(".opener").on("click", function(function() {
-	{
-	$("#dialog").dialog("open");
-	}
- 	{
+    $(".opener").on("click", function() {
     $(this).hide();
     var value = $(this).val();
 
@@ -58,6 +54,8 @@ $(function() {
         		$('#op1').html(result[0].option1);
         		$('#op2').html(result[0].option2);
         		$('#op3').html(result[0].option3);
+
+        		$("#dialog").dialog("open");
             }
 
       
@@ -69,6 +67,8 @@ $(function() {
     document.getElementById("response").innerHTML = "";
 
     
+
+
+    
 	});
   } );
-
