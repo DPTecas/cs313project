@@ -6,7 +6,7 @@ var mainScore = 0;
 
 $(function()
 {
-	var value = document.getElementById("r1").value;
+	var value = 1;
 
 	$.ajax({
 		type: "GET",
@@ -24,7 +24,7 @@ $(function()
 
 function insertData()
 {
-	var value = document.getElementById("r1").value;
+	var value = 1;
 	var name = document.getElementById("name").value;
 
 	var data = {};
@@ -117,10 +117,6 @@ $(function() {
     $(this).hide();
     var value = $(this).val();
     
-
-    document.getElementById("r1").value = "Loading...";
-    document.getElementById("r2").value = "";
-    document.getElementById("r3").value = "";
     document.getElementById("response").innerHTML = "";
 
     $.ajax({
