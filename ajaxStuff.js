@@ -27,12 +27,16 @@ function insertData()
 	var value = 1;
 	var name = document.getElementById("name").value;
 
-	
+	var data = {};
+	data.title_id = value;
+	data.name = name;
+	data.score = mainScore;
+	data.category = mainTrait;
 
 	$.ajax({
 		type: "POST",
         url: 'https://glacial-sands-13729.herokuapp.com/postScores',
-        data: { title_id : value, name : name, score : mainScore, category : mainTrait},
+        data: JSON.stringify(data),
         dataType: "json",
         contentType: "application/json",
         success: function (result) {
