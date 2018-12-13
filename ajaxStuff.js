@@ -2,17 +2,7 @@ function addPath()
 {
 	$(document).ready(function(){
 	    $("#path10").click(function(){
-	    	$("#insert").dialog({
-		      autoOpen: false,
-		      show: {
-		        effect: "blind",
-		        duration: 1000
-		      },
-		      hide: {
-		        effect: "explode",
-		        duration: 1000
-		      }
-		    });
+	    	
 	        $("#insert").show();
 	    });
 	});
@@ -39,6 +29,18 @@ function fillResponse(name)
 
 
 $(function() {
+	$("#insert").dialog({
+	  autoOpen: false,
+        show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+
     $("#dialog").dialog({
       autoOpen: false,
       show: {
