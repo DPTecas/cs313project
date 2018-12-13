@@ -144,7 +144,7 @@ function getScores(req, res) {
 }
 
 function getScoresFromDb(title_id, callback) {
-	var sql = "SELECT name, score, category FROM scores WHERE title_id = 1";
+	var sql = "SELECT name, score, category FROM scores";
 
 	var params = [title_id];
 
