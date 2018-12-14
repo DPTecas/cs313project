@@ -17,7 +17,7 @@ $(function()
         		var plus = i+1;
         		var tag = '#b' + plus;
         		if (result[i] != undefined)
-        			$('#b1').html(result[i].name + result[i].score + result[i].category);
+        			$(tag).html(result[i].name + result[i].score + result[i].category);
         	}
 
         	$("#board").dialog("open");
