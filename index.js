@@ -138,7 +138,7 @@ function getScores(req, res) {
 		} 
 		else {
 			var stuff = result;
-			res.json(JSON.stringify(stuff));
+			res.send(stuff);
 		}
 	});	
 }
