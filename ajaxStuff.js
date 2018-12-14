@@ -7,7 +7,7 @@ var mainScore = 0;
 $(function()
 {
 	var value = 1;
-
+	$("#boardOpen").on("click", function(){
 	$.ajax({
 		type: "GET",
         url: 'https://glacial-sands-13729.herokuapp.com/getScores?title_id=' + value,
@@ -17,12 +17,12 @@ $(function()
         		if (result[i] != undefined)
         			$('#b1').html(result[i].name + result[i].score + result[i].category);
         	}
-        	
+        	$("#board").dialog("open");       	
         }
     });
 
-    $("#boardOpen").on("click", function(){
-    	$("#board").dialog("open");
+    
+    	
     });
 });
 
