@@ -144,7 +144,7 @@ function getScores(req, res) {
 }
 
 function getScoresFromDb(title_id, callback) {
-	var sql = "SELECT s.name, s.score, s.category FROM scores s INNER JOIN titles t ON s.title_id = $1::int";
+	var sql = 'SELECT s.name, s.score, s.category FROM scores s INNER JOIN titles t ON s.title_id = $1::int';
 
 	var params = [title_id];
 
