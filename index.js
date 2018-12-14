@@ -103,13 +103,13 @@ function postScores(req, res) {
 		} 
 		else {
 			var score = result;
-			res.status(200).json(score.rows);
+			res.status(200).json(score);
 		}
 	});	
 }
 
 function postScoresFromDb(title_id, name, score, category, callback) {
-	var sql = 'INSERT INTO scores (title_id, name, score, category) VALUES ($1, $2, $3, $4) RETURNING id';
+	var sql = 'INSERT INTO scores (title_id, name, score, category) VALUES ($1, $2, $3, $4) RETURNING *';
 
 	var params = [title_id, name, score, category];
 
@@ -138,7 +138,7 @@ function getScores(req, res) {
 		} 
 		else {
 			var stuff = result;
-			res.json(stuff);
+			res.json(JSON.parse(stuff));
 		}
 	});	
 }
