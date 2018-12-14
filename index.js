@@ -129,7 +129,7 @@ function postScoresFromDb(title_id, name, score, category, callback) {
 }
 
 function getScores(req, res) {
-	var title_id = req.query.title_id;
+	var title_id = req.body.title_id;
 
 	getScoresFromDb(title_id, function(error, result){
 
