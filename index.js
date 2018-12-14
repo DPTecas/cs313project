@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require('body-parser');
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -15,7 +16,7 @@ const dbConnectionString = process.env.DATABASE_URL;
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.json());
 
 app.get("/getTitles", function(req, res){
 	getTitles(req, res);
@@ -138,7 +139,7 @@ function getScores(req, res) {
 		} 
 		else {
 			var stuff = result;
-			res.send(stuff);
+			res.json(stuff);
 		}
 	});	
 }
