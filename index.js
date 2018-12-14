@@ -137,7 +137,7 @@ function getScores(req, res) {
 			res.status(500).json({success: false, data: error});
 		} 
 		else {
-			for (int i = 0; i < result.length; i++)
+			for (var i = 0; i < result.length; i++)
 				res.json(result[i]);
 		}
 	});	
