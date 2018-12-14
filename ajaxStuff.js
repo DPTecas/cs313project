@@ -14,6 +14,8 @@ $(function()
         success: function (result) {
         	for (var i = 9; i >= 0; i--)
         	{
+        		var plus = i+1;
+        		var tag = '#b' + plus;
         		if (result[i] != undefined)
         			$('#b1').html(result[i].name + result[i].score + result[i].category);
         	}
