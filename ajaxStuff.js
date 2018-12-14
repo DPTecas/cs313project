@@ -20,7 +20,7 @@ $(function()
         			$('#b1').html(result[i].name + result[i].score + result[i].category);
         	}
 
-        	$("#boardOpen").dialog("open");
+        	$("#board").dialog("open");
         }
     });
 
