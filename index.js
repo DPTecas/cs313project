@@ -144,11 +144,11 @@ function getScores(req, res) {
 }
 
 function getScoresFromDb(title_id, callback) {
-	var sql = "SELECT id, title_id, name, score, category FROM scores";
+	var sql = "SELECT s.name, s.score, s.category FROM scores s INNER JOIN titles t ON scores.title_id = $1";
 
 	var params = [title_id];
 
-	pool.query(sql, function(err, result) {
+	pool.query(sql, params, function(err, result) {
 
 		if (err) {
 			console.log("Error in query: ")
