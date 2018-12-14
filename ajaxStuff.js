@@ -6,7 +6,7 @@ var mainScore = 0;
 
 $(function()
 {
-	var value = 1;
+	var value = '1';
 	$("#boardOpen").on("click", function(){
 	$.ajax({
 		type: "GET",
