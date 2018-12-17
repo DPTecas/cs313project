@@ -4,6 +4,7 @@ var boring = 0;
 var mainTrait = "Courageous";
 var mainScore = 0;
 
+// for opening the board with the 10 most recent players
 $(function()
 {
 	var value = 1;
@@ -32,6 +33,7 @@ $(function()
     });
 });
 
+// puts name and score data into the database, with their main trait or category
 function insertData()
 {
 	var value = 1;
@@ -51,12 +53,14 @@ function insertData()
         contentType: "application/json",
         success: function (result) {
         	alert('Successfully inserted name into the board!');
+        	$("#dialog").dialog("open");
         }
     });
 
     document.getElementById("insertData").style.visibility = "hidden";
 }
 
+//will give a response when the user picks an option
 function fillResponse(name)
 {
 	var value = document.getElementById("r1").value;
