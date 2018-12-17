@@ -17,7 +17,10 @@ $(function()
         		var plus = i+1;
         		var tag = '#b' + plus;
         		if (result[i] != undefined)
-        			$(tag).html(result[i].name + result[i].score + result[i].category);
+        		{
+        			score = result[i].score * 10;
+        			$(tag).html(result[i].name + " is " score "\% " + result[i].category);
+        		}
         	}
 
         	$("#board").dialog("open");

@@ -7,6 +7,11 @@ body {
   background-size: 1500px 700px;
 }
 
+#boardOpen{
+  position: absolute;
+  top: 640px;
+  left: 600px;
+}
 
 #path1{
   position: absolute;
