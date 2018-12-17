@@ -7,21 +7,23 @@ var mainScore = 0;
 // for opening the board with the 10 most recent players
 $(function()
 {
+	var j = 9;
 	var value = 1;
 	$("#boardOpen").on("click", function(){
 	$.ajax({
 		type: "GET",
         url: 'https://glacial-sands-13729.herokuapp.com/getScores?title_id=' + value,
         success: function (result) {
-        	for (var i = 9; i >= 0; i--)
+        	for (var i = result.length; i >= result.length-9; i--)
         	{
-        		var plus = i+1;
+        		var plus = j+1;
         		var tag = '#b' + plus;
         		if (result[i] != undefined)
         		{
         			score = result[i].score * 10;
         			$(tag).html(result[i].name + " is " + score + "\% " + result[i].category);
         		}
+        		j--;
         	}
 
         	$("#board").dialog("open");
@@ -53,7 +55,7 @@ function insertData()
         contentType: "application/json",
         success: function (result) {
         	alert('Successfully inserted name into the board!');
-        	$("#dialog").dialog("close");
+        	$("#insert").dialog("close");
         }
     });
 
