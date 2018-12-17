@@ -53,6 +53,8 @@ function insertData()
         	alert('Successfully inserted name into the board!');
         }
     });
+
+    document.getElementById("insertData").style.visibility = "hidden";
 }
 
 function fillResponse(name)
@@ -95,6 +97,10 @@ function fillResponse(name)
         			mainTrait = "Courageous";
         			mainScore = courage;
         		}
+
+        		document.getElementById("r1").style.visibility = "hidden";
+        		document.getElementById("r2").style.visibility = "hidden";
+        		document.getElementById("r3").style.visibility = "hidden";
             }   
     });
 }
@@ -158,6 +164,10 @@ $(function() {
         			$("#insert").dialog("open");
 
         		$("#dialog").dialog("open");
+
+        		document.getElementById("r1").style.visibility = "visible";
+        		document.getElementById("r2").style.visibility = "visible";
+        		document.getElementById("r3").style.visibility = "visible";
             }    
     });
 
