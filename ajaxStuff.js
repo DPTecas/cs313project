@@ -53,7 +53,7 @@ function insertData()
         contentType: "application/json",
         success: function (result) {
         	alert('Successfully inserted name into the board!');
-        	$("#dialog").dialog("open");
+        	$("#dialog").dialog("close");
         }
     });
 
