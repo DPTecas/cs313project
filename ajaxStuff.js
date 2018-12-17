@@ -19,7 +19,7 @@ $(function()
         		if (result[i] != undefined)
         		{
         			score = result[i].score * 10;
-        			$(tag).html(result[i].name + " is " score "\% " + result[i].category);
+        			$(tag).html(result[i].name + " is " + score + "\% " + result[i].category);
         		}
         	}
 
