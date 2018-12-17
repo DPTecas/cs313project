@@ -85,7 +85,7 @@ INSERT INTO dialogues (prompt, option1, option2, option3)
 VALUES ('You run into Deborah, an old friend, and her child, Jimothy.',
 		'1) Hey Diane! Hey Johnny! How are ya????', 
 		'2) How you doin?', 
-		'3)  her. Run. RUN.');
+		'3) Run. RUN.');
 
 INSERT INTO responses (dia_id, r1, r2, r3)
 VALUES (5, 
