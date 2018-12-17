@@ -35,27 +35,27 @@ INSERT INTO titles(title) VALUES ('Grocery Trip');
 
 INSERT INTO dialogues (prompt, option1, option2, option3) 
 VALUES ('You make your way to the produce aisle...',
-		'Buy bananas, and peacefully go on your way.', 
-		'Stare longingly at the empty racks of romaine lettuce.', 
-		'Take a bite out of a tomato and stare at the first person you see while the juice drips down your chin.');
+		'1) Take a bite out of a tomato and stare at the first person you see while the juice drips down your chin.', 
+		'2) Stare longingly at the empty racks of romaine lettuce. Save the lettuce!', 
+		'3) Buy bananas, and peacefully go on your way.');
 
 INSERT INTO responses (dia_id, r1, r2, r3)
 VALUES (1, 
-		'Ah, a boring one I see.',
+		'What is wrong with you?',
 		'Just let it go, it will be okay.',
-		'What is wrong with you?');
+		'Ah, a boring one I see.');
 
 INSERT INTO dialogues (prompt, option1, option2, option3) 
 VALUES ('To the cleaning supplies!',
-		'You take 20 minutes to smell each air freshener before choosing one.', 
-		'Take a nap, no one ever visits this aisle.', 
-		'Lick the bar soap.');
+		'1) Lick the bar soap.', 
+		'2) You take 20 minutes to smell each air freshener before choosing one.', 
+		'3) Take a nap, no one ever visits this aisle.');
 
 INSERT INTO responses (dia_id, r1, r2, r3)
 VALUES (2, 
+		'Are you broken?',
 		'You''ve got a lot of time on your hands...',
-		'Same friend, same.',
-		'Are you broken?');
+		'Same friend, same. ');
 
 INSERT INTO dialogues (prompt, option1, option2, option3) 
 VALUES ('You see your ex at the end of the aisle!',

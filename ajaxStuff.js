@@ -4,7 +4,7 @@ var boring = 0;
 var mainTrait = "Courageous";
 var mainScore = 0;
 
-// for opening the board with the 10 most recent players
+// for opening the board with the 10 most recent players to play
 $(function()
 {
 	var j = 9;
